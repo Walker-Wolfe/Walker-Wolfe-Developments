@@ -62,6 +62,19 @@
     gap:10px;
   }
   .brand .dot{width:7px;height:7px;background:var(--black);border-radius:50%;display:inline-block;}
+  .topbar-left{display:flex;align-items:center;gap:32px;}
+  .topbar-nav{display:flex;gap:6px;}
+  .nav-link{
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    padding:6px 2px;
+    color:var(--gray);
+    border-bottom:2px solid transparent;
+  }
+  .nav-link:hover{color:var(--black);}
+  .nav-link.active{color:var(--black);border-bottom-color:var(--black);}
   .topbar-actions{display:flex;gap:14px;align-items:center;}
   .save-indicator{
     font-size:11px;
@@ -239,6 +252,137 @@
   .manage-cat-row button:hover{color:var(--black);}
   .manage-cat-add{display:flex;gap:10px;}
   .manage-cat-add input{flex:1;padding:9px 10px;font-size:13px;}
+
+  /* ---------- Tags ---------- */
+  .filter-bar{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-bottom:32px;
+  }
+  .filter-label{
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--gray);
+    margin-right:2px;
+  }
+  .tag-filter-pill{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    padding:6px 12px;
+    border:1px solid var(--line);
+    color:var(--gray-dark);
+  }
+  .tag-filter-pill.active{background:var(--black);color:var(--white);border-color:var(--black);}
+  .tag-filter-pill:hover:not(.active){border-color:var(--black);color:var(--black);}
+  .filter-clear{
+    font-size:11px;
+    color:var(--gray-dark);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .filter-clear:hover{color:var(--black);}
+  .filter-empty-row{
+    font-size:13px;
+    color:var(--gray);
+    border:1px dashed var(--line);
+    padding:24px;
+    text-align:center;
+  }
+
+  .tile-tags{
+    font-size:10px;
+    color:var(--gray);
+    margin-top:8px;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .tag-add-row{display:flex;gap:10px;margin-bottom:12px;}
+  .tag-add-row input{flex:1;padding:8px 10px;font-size:13px;}
+  .tag-chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    padding:5px 6px 5px 11px;
+    border:1px solid var(--line);
+    color:var(--gray-dark);
+  }
+  .tag-chip button{font-size:13px;color:var(--gray);line-height:1;padding:2px;}
+  .tag-chip button:hover{color:var(--black);}
+
+  /* ---------- Tags ---------- */
+  .tag-filter-bar{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-bottom:32px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--line);
+  }
+  .tag-filter-label{
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--gray);
+    margin-right:4px;
+  }
+  .tag-filter-pill{
+    font-size:11px;
+    letter-spacing:0.02em;
+    padding:6px 12px;
+    border:1px solid var(--line);
+    color:var(--gray-dark);
+    border-radius:999px;
+  }
+  .tag-filter-pill.active{background:var(--black);color:var(--white);border-color:var(--black);}
+  .tag-filter-pill:hover:not(.active){border-color:var(--black);color:var(--black);}
+  .tag-filter-clear{
+    font-size:11px;
+    color:var(--gray);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .tag-filter-clear:hover{color:var(--black);}
+
+  .tile-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px;}
+  .tile-tag{
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    color:var(--gray-dark);
+    background:var(--hover);
+    padding:3px 7px;
+    border-radius:999px;
+  }
+
+  .tag-chip-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+  .tag-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:11px;
+    letter-spacing:0.02em;
+    padding:5px 6px 5px 10px;
+    border:1px solid var(--line);
+    color:var(--gray-dark);
+    border-radius:999px;
+  }
+  .tag-chip button{font-size:13px;line-height:1;color:var(--gray);padding:2px;}
+  .tag-chip button:hover{color:var(--black);}
+  .tag-add-row{display:flex;gap:8px;}
+  .tag-add-row input{flex:1;padding:8px 10px;font-size:12px;}
 
   /* ---------- Detail view ---------- */
   .detail-head{
@@ -566,6 +710,65 @@
   }
   .login-error.active{display:block;}
   #appRoot{display:none;}
+
+  /* ---------- Collections canvas ---------- */
+  .canvas-page{padding:40px 32px 32px;}
+  .canvas-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:20px;
+  }
+  .canvas-wrap{
+    border:1px solid var(--line);
+    height:calc(100vh - 230px);
+    min-height:400px;
+    overflow:auto;
+    position:relative;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.045) 1px, transparent 1px);
+    background-size:40px 40px;
+  }
+  .canvas{
+    position:relative;
+    width:2400px;
+    height:1600px;
+  }
+  .canvas-tile{
+    position:absolute;
+    width:150px;
+    cursor:grab;
+    touch-action:none;
+    user-select:none;
+  }
+  .canvas-tile.dragging{cursor:grabbing;}
+  .canvas-tile-img{
+    width:150px;height:150px;
+    background:var(--hover);
+    border:1px solid var(--line);
+    overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 1px 3px rgba(0,0,0,0.06);
+    transition:box-shadow .15s ease;
+  }
+  .canvas-tile.dragging .canvas-tile-img{box-shadow:0 10px 24px rgba(0,0,0,0.22);}
+  .canvas-tile-img img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+  .canvas-tile-img .placeholder{font-size:10px;color:var(--gray);text-transform:uppercase;letter-spacing:0.04em;}
+  .canvas-tile-label{
+    margin-top:8px;
+    font-size:11px;
+    font-weight:700;
+    text-align:center;
+    line-height:1.3;
+    pointer-events:none;
+  }
+  .canvas-empty{
+    padding:100px 20px;
+    text-align:center;
+    color:var(--gray);
+    font-size:13px;
+  }
 </style>
 </head>
 <body>
@@ -586,10 +789,16 @@
 <div id="appRoot">
 
 <div class="topbar">
-  <div class="brand">Walker Wolfe Developments</div>
+  <div class="topbar-left">
+    <div class="brand">Walker Wolfe Developments</div>
+    <nav class="topbar-nav">
+      <button class="nav-link active" id="navProjects">Projects</button>
+      <button class="nav-link" id="navCollections">Collections</button>
+    </nav>
+  </div>
   <div class="topbar-actions">
     <span class="save-indicator" id="saveIndicator"></span>
-    <button class="btn-text" id="homeLink" style="display:none;">All projects</button>
+    <button class="btn-text" id="homeLink" style="display:none;">← Back</button>
     <button class="btn-text" id="logoutBtn">Sign out</button>
   </div>
 </div>
@@ -604,9 +813,26 @@
       </div>
       <div class="head-actions">
         <button class="btn-text" id="manageCatBtn">Manage categories</button>
+        <button class="btn" id="headerAddBtn">New project</button>
       </div>
     </div>
+    <div class="filter-bar" id="filterBar"></div>
     <div id="homeContent"></div>
+  </div>
+</div>
+
+<!-- COLLECTIONS VIEW -->
+<div class="view" id="collectionsView">
+  <div class="canvas-page">
+    <div class="canvas-head">
+      <div>
+        <div class="page-title">Collections</div>
+        <div class="page-sub" id="collectionsSub">0 projects</div>
+      </div>
+    </div>
+    <div class="canvas-wrap" id="canvasWrap">
+      <div class="canvas" id="canvas"></div>
+    </div>
   </div>
 </div>
 
@@ -627,6 +853,12 @@
         <div class="stage-row" id="stageRow"></div>
         <span class="cat-tag">Category</span>
         <div class="cat-pill-row" id="catPillRow"></div>
+        <span class="cat-tag">Tags</span>
+        <div class="tag-add-row">
+          <input type="text" id="tagInput" placeholder="Add a tag and press Enter">
+          <button class="btn btn-outline" id="tagAddBtn">Add</button>
+        </div>
+        <div class="tag-chip-row" id="tagChipRow"></div>
         <div class="detail-actions">
           <button class="btn-text" id="deleteProductBtn" style="color:var(--gray);">Delete project</button>
         </div>
@@ -747,14 +979,30 @@
   var currentProductId = null;
   var pendingNewProductImage = null;
   var editingTimelineNodeId = null;
+  var activeTagFilters = new Set(); // lowercase tag keys
 
   function ensureState(){
     if(!state.categories) state.categories = [];
     if(!state.products) state.products = [];
+    state.products.forEach(function(p){ if(!p.tags) p.tags = []; });
   }
   function catName(id){
     var c = state.categories.find(function(c){ return c.id===id; });
     return c ? c.name : null;
+  }
+  function collectTags(){
+    var map = {};
+    state.products.forEach(function(p){
+      (p.tags||[]).forEach(function(t){
+        var key = t.toLowerCase();
+        if(!map[key]) map[key] = t;
+      });
+    });
+    return Object.keys(map).sort().map(function(k){ return map[k]; });
+  }
+  function matchesTagFilter(p){
+    if(activeTagFilters.size===0) return true;
+    return (p.tags||[]).some(function(t){ return activeTagFilters.has(t.toLowerCase()); });
   }
 
   // ---------- Storage (Firestore, scoped to signed-in user) ----------
@@ -801,7 +1049,7 @@
         if(currentProductId && getProduct()){
           renderDetail();
         } else {
-          showHome();
+          refreshMainView();
         }
       }, function(e){
         console.error("Firestore listen error:", e);
@@ -850,24 +1098,144 @@
   }
 
   // ---------- Navigation ----------
+  var lastMainView = "home"; // "home" or "collections" — remembers which tab to return to
+
+  function updateNavActive(){
+    document.getElementById("navProjects").classList.toggle("active", lastMainView==="home");
+    document.getElementById("navCollections").classList.toggle("active", lastMainView==="collections");
+  }
   function showHome(){
     currentProductId = null;
+    lastMainView = "home";
     document.getElementById("homeView").classList.add("active");
+    document.getElementById("collectionsView").classList.remove("active");
     document.getElementById("detailView").classList.remove("active");
     document.getElementById("homeLink").style.display = "none";
+    updateNavActive();
     renderHome();
+  }
+  function showCollections(){
+    currentProductId = null;
+    lastMainView = "collections";
+    document.getElementById("homeView").classList.remove("active");
+    document.getElementById("collectionsView").classList.add("active");
+    document.getElementById("detailView").classList.remove("active");
+    document.getElementById("homeLink").style.display = "none";
+    updateNavActive();
+    renderCollections();
   }
   function showDetail(id){
     currentProductId = id;
     document.getElementById("homeView").classList.remove("active");
+    document.getElementById("collectionsView").classList.remove("active");
     document.getElementById("detailView").classList.add("active");
     document.getElementById("homeLink").style.display = "inline-block";
     renderDetail();
+  }
+  function goBack(){
+    if(lastMainView==="collections") showCollections();
+    else showHome();
+  }
+  function refreshMainView(){
+    if(lastMainView==="collections") renderCollections();
+    else renderHome();
+  }
+  document.getElementById("navProjects").addEventListener("click", showHome);
+  document.getElementById("navCollections").addEventListener("click", showCollections);
+
+  // ---------- Collections (freeform canvas) ----------
+  function renderCollections(){
+    var canvas = document.getElementById("canvas");
+    var sub = document.getElementById("collectionsSub");
+    sub.textContent = state.products.length + (state.products.length===1 ? " project" : " projects");
+
+    if(state.products.length===0){
+      canvas.innerHTML = '<div class="canvas-empty">No projects yet — add one from the Projects page and it will appear here.</div>';
+      return;
+    }
+
+    var maxZ = state.canvasMaxZ || 0;
+    var needsSave = false;
+    state.products.forEach(function(p, idx){
+      if(!p.canvasPos){
+        var col = idx % 6, rowN = Math.floor(idx / 6);
+        p.canvasPos = { x: 40 + col * 190, y: 40 + rowN * 210 };
+        needsSave = true;
+      }
+      if(typeof p.canvasZ !== "number"){
+        maxZ++;
+        p.canvasZ = maxZ;
+        needsSave = true;
+      }
+    });
+    if(needsSave){
+      state.canvasMaxZ = maxZ;
+      scheduleSave();
+    }
+
+    canvas.innerHTML = "";
+    state.products.forEach(function(p){
+      var el = document.createElement("div");
+      el.className = "canvas-tile";
+      el.style.left = p.canvasPos.x + "px";
+      el.style.top = p.canvasPos.y + "px";
+      el.style.zIndex = p.canvasZ;
+      el.innerHTML =
+        '<div class="canvas-tile-img">' +
+          (p.image ? '<img src="'+p.image+'" alt="">' : '<span class="placeholder">No image</span>') +
+        '</div>' +
+        '<div class="canvas-tile-label">'+escapeHtml(p.name||"Untitled")+'</div>';
+      wireCanvasTileDrag(el, p);
+      canvas.appendChild(el);
+    });
+  }
+
+  function wireCanvasTileDrag(el, p){
+    var startX, startY, origX, origY, moved, pointerId;
+
+    el.addEventListener("pointerdown", function(e){
+      e.preventDefault();
+      pointerId = e.pointerId;
+      el.setPointerCapture(pointerId);
+      startX = e.clientX; startY = e.clientY;
+      origX = p.canvasPos.x; origY = p.canvasPos.y;
+      moved = false;
+      el.classList.add("dragging");
+
+      state.canvasMaxZ = (state.canvasMaxZ || 0) + 1;
+      p.canvasZ = state.canvasMaxZ;
+      el.style.zIndex = p.canvasZ;
+
+      function onMove(ev){
+        var dx = ev.clientX - startX;
+        var dy = ev.clientY - startY;
+        if(Math.abs(dx) > 3 || Math.abs(dy) > 3) moved = true;
+        var nx = Math.max(0, origX + dx);
+        var ny = Math.max(0, origY + dy);
+        p.canvasPos = { x: nx, y: ny };
+        el.style.left = nx + "px";
+        el.style.top = ny + "px";
+      }
+      function onUp(){
+        el.releasePointerCapture(pointerId);
+        el.removeEventListener("pointermove", onMove);
+        el.removeEventListener("pointerup", onUp);
+        el.classList.remove("dragging");
+        if(moved){
+          scheduleSave();
+        } else {
+          showDetail(p.id);
+        }
+      }
+      el.addEventListener("pointermove", onMove);
+      el.addEventListener("pointerup", onUp);
+    });
   }
 
   // ---------- Home render ----------
   function tileHtml(p){
     var prog = progressForStage(p.stage);
+    var tagsLine = (p.tags && p.tags.length) ? '<div class="tile-tags">'+escapeHtml(p.tags.join(" · "))+'</div>' : '';
     return '<button class="tile" data-id="'+p.id+'">' +
       '<div class="tile-img">' +
         (p.image ? '<img src="'+p.image+'" alt="">' : '<span class="placeholder">No image</span>') +
@@ -879,6 +1247,7 @@
           '<span style="font-size:11px;color:var(--gray);">'+prog+'%</span>' +
         '</div>' +
         '<div class="progress-track"><div class="progress-fill" style="width:'+prog+'%;"></div></div>' +
+        tagsLine +
       '</div>' +
     '</button>';
   }
@@ -896,10 +1265,51 @@
     });
   }
 
+  function renderFilterBar(){
+    var bar = document.getElementById("filterBar");
+    var tags = collectTags();
+    if(tags.length===0){
+      bar.innerHTML = "";
+      return;
+    }
+    var html = '<span class="filter-label">Filter by tag</span>';
+    tags.forEach(function(tag){
+      var key = tag.toLowerCase();
+      html += '<button class="tag-filter-pill'+(activeTagFilters.has(key)?' active':'')+'" data-key="'+escapeHtml(key)+'">'+escapeHtml(tag)+'</button>';
+    });
+    if(activeTagFilters.size>0){
+      html += '<button class="filter-clear">Clear filters</button>';
+    }
+    bar.innerHTML = html;
+    bar.querySelectorAll(".tag-filter-pill").forEach(function(el){
+      el.addEventListener("click", function(){
+        var key = el.getAttribute("data-key");
+        if(activeTagFilters.has(key)) activeTagFilters.delete(key);
+        else activeTagFilters.add(key);
+        renderHome();
+      });
+    });
+    var clearBtn = bar.querySelector(".filter-clear");
+    if(clearBtn){
+      clearBtn.addEventListener("click", function(){
+        activeTagFilters.clear();
+        renderHome();
+      });
+    }
+  }
+
   function renderHome(){
+    renderFilterBar();
+
     var content = document.getElementById("homeContent");
     var sub = document.getElementById("homeSub");
-    sub.textContent = state.products.length + " in development";
+    var visible = state.products.filter(matchesTagFilter);
+
+    if(activeTagFilters.size>0){
+      sub.textContent = visible.length + " of " + state.products.length + " shown";
+    } else {
+      sub.textContent = state.products.length + " in development";
+    }
 
     if(state.products.length===0 && state.categories.length===0){
       content.innerHTML = '<div class="grid">' + addTileHtml("emptyAddTile") + '</div>';
@@ -907,10 +1317,16 @@
       return;
     }
 
+    if(activeTagFilters.size>0 && visible.length===0){
+      content.innerHTML = '<div class="filter-empty-row">No projects match the selected tags.</div>';
+      return;
+    }
+
     var html = "";
 
     state.categories.forEach(function(cat){
-      var items = state.products.filter(function(p){ return p.categoryId===cat.id; });
+      var items = visible.filter(function(p){ return p.categoryId===cat.id; });
+      if(activeTagFilters.size>0 && items.length===0) return; // hide empty categories while filtering
       html += '<div class="category-section">' +
         '<div class="category-header"><h2>'+escapeHtml(cat.name)+'</h2><span class="cat-count">'+items.length+'</span></div>';
       if(items.length===0){
@@ -921,11 +1337,13 @@
       html += '</div>';
     });
 
-    var uncategorized = state.products.filter(function(p){ return !p.categoryId || !catName(p.categoryId); });
-    html += '<div class="category-section">' +
-      '<div class="category-header"><h2>Uncategorized</h2><span class="cat-count">'+uncategorized.length+'</span></div>' +
-      '<div class="grid">' + uncategorized.map(tileHtml).join("") + addTileHtml("gridAddTile") + '</div>' +
-    '</div>';
+    var uncategorized = visible.filter(function(p){ return !p.categoryId || !catName(p.categoryId); });
+    if(!(activeTagFilters.size>0 && uncategorized.length===0)){
+      html += '<div class="category-section">' +
+        '<div class="category-header"><h2>Uncategorized</h2><span class="cat-count">'+uncategorized.length+'</span></div>' +
+        '<div class="grid">' + uncategorized.map(tileHtml).join("") + addTileHtml("gridAddTile") + '</div>' +
+      '</div>';
+    }
 
     content.innerHTML = html;
     wireGrid(content);
@@ -1029,6 +1447,7 @@
     });
 
     renderCatPills(p);
+    renderTagChips(p);
     renderTodos(p);
     renderFiles(p);
     renderTimeline(p);
@@ -1058,6 +1477,45 @@
     row.appendChild(add);
   }
 
+  function renderTagChips(p){
+    var row = document.getElementById("tagChipRow");
+    row.innerHTML = "";
+    (p.tags||[]).forEach(function(tag){
+      var chip = document.createElement("span");
+      chip.className = "tag-chip";
+      var label = document.createTextNode(tag);
+      var btn = document.createElement("button");
+      btn.textContent = "×";
+      btn.setAttribute("aria-label", "Remove tag");
+      btn.addEventListener("click", function(){
+        p.tags = p.tags.filter(function(t){ return t!==tag; });
+        scheduleSave();
+        renderTagChips(p);
+        renderHome();
+      });
+      chip.appendChild(label);
+      chip.appendChild(btn);
+      row.appendChild(chip);
+    });
+  }
+  function addTag(){
+    var input = document.getElementById("tagInput");
+    var val = input.value.trim();
+    if(!val) return;
+    var p = getProduct();
+    if(!p.tags) p.tags = [];
+    var exists = p.tags.some(function(t){ return t.toLowerCase()===val.toLowerCase(); });
+    if(!exists) p.tags.push(val);
+    input.value = "";
+    scheduleSave();
+    renderTagChips(p);
+    renderHome();
+  }
+  document.getElementById("tagAddBtn").addEventListener("click", addTag);
+  document.getElementById("tagInput").addEventListener("keydown", function(e){
+    if(e.key==="Enter") addTag();
+  });
+
   document.getElementById("detailName").addEventListener("input", function(){
     var p = getProduct();
     if(!p) return;
@@ -1065,7 +1523,7 @@
     scheduleSave();
   });
   document.getElementById("backBtn").addEventListener("click", showHome);
-  document.getElementById("homeLink").addEventListener("click", showHome);
+  document.getElementById("homeLink").addEventListener("click", goBack);
 
   document.getElementById("detailImgWrap").addEventListener("click", function(){
     document.getElementById("detailImgInput").click();
@@ -1357,6 +1815,7 @@
     renderManageCatList();
   }
   document.getElementById("manageCatBtn").addEventListener("click", openManageCatModal);
+  document.getElementById("headerAddBtn").addEventListener("click", openNewProductModal);
   document.getElementById("manageCatAddBtn").addEventListener("click", addCategory);
   document.getElementById("manageCatNewInput").addEventListener("keydown", function(e){
     if(e.key==="Enter") addCategory();
@@ -1413,6 +1872,7 @@
       if(unsubscribeSnapshot){ unsubscribeSnapshot(); unsubscribeSnapshot = null; }
       state = { products: [], categories: [] };
       currentProductId = null;
+      lastMainView = "home";
       showLoginGate();
     }
   });
